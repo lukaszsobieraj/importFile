@@ -1,0 +1,36 @@
+default:
+    resource: "@DefaultBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    
+list_action:
+    path:     /list
+    defaults: { _controller: DefaultBundle:Default:list }
+    
+edit_action:
+    path:     /edit/{id}
+    defaults: { _controller: DefaultBundle:Default:edit }    
+    
+add_action:
+    path:     /add
+    defaults: { _controller: DefaultBundle:Default:add }  
+
+email_action:
+    path:     /email
+    defaults: { _controller: DefaultBundle:Default:email }
+    
+delete_action:
+    path:     /delete/{id}
+    defaults: { _controller: DefaultBundle:Default:delete }  
+    
+show_action:
+    path:     /show/{id}
+    defaults: { _controller: DefaultBundle:Default:show }
+    
+fos_user:
+   resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+   prefix: /
+

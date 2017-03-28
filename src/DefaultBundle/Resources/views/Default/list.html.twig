@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            td, th{
+                text-align: center;
+            }
+            #new_record{
+                margin-bottom: 10px !important;
+                margin-top: 100px !important ;
+            }
+            .btn-circle {
+                width: 30px;
+                height: 30px;
+                border-radius:20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h4><center>Welcome on my first symfony page</center></h4>
+                <h5><center>Dzisiaj jest: {{ currentDate }}</center></h5>
+                <a href="{{path('add_action')}}" class="btn-lg btn-danger btn-circle" id="new_record"><i class="glyphicon glyphicon-plus"></i></a>
+                <table id="main-table" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Last name</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in person %}
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.lastName }}</td>
+                                <td>{{ item.age }}</td>
+                                <td>
+                                    <a href="{{ path('edit_action', { 'id': item.id })}}" class="btn btn-default">Edit</a>
+                                    <a href="{{ path('show_action', { 'id': item.id })}}" class="btn btn-primary">Show</a>
+                                    <a href="{{ path('delete_action', { 'id': item.id })}}" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

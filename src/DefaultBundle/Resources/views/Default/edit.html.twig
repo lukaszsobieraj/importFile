@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h4>Edit</h4>
+                {{ form_start(personForm) }}
+                {{ form_row(personForm.name) }}
+                {{ form_row(personForm.lastName) }}
+                {{ form_row(personForm.age) }}
+
+                <button type="submit" class="btn btn-primary" formnovalidate>Edit</button>
+                {{ form_end(personForm) }}
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $("#form_Edit").addClass('hidden');
+        </script>
+    </body>
+</html>

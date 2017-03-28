@@ -1,0 +1,20 @@
+DefaultBundle\Entity\Person:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+            column: last_name
+        age:
+            type: integer
+    lifecycleCallbacks: {  }
