@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -10,3 +11,14 @@
 /vendor/
 /bin/
 /composer.phar
+=======
+/node_modules
+/public/storage
+/public/hot
+/storage/*.key
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+>>>>>>> origin/master
