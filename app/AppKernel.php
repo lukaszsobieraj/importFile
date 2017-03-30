@@ -18,7 +18,6 @@ class AppKernel extends Kernel {
             new AppBundle\AppBundle(),
             new DefaultBundle\DefaultBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
@@ -33,6 +32,11 @@ class AppKernel extends Kernel {
 
     public function registerContainerConfiguration(LoaderInterface $loader) {
         $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+    }
+
+    public function locateResource($name, $dir = null, $first = true) {
+        clearstatcache(true);
+        return parent::locateResource($name, $dir, $first);
     }
 
 }
